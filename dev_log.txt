@@ -1,0 +1,11 @@
+2024-07-30T08:00:00Z
+- Initialized Git repository.
+- Started addressing UI issues: logo display and hero text visibility.
+
+2024-07-30T08:15:00Z
+- Analyzed index.html and styles.css.
+- Modified hero section styles in css/styles.css:
+    - Changed text color of .main-title, .sub-title, .hero-text to var(--text-color) (#333333) for better contrast.
+    - Adjusted .hero-overlay to a light semi-transparent white (rgba(255, 255, 255, 0.7)) to match the visual and ensure text readability.
+    - Removed text-shadows and animations from hero text for simplification.
+- No changes made to logo as current CSS (white navbar background, dark blue logo text) should provide good visibility. Awaiting further clarification if logo issue persists. 
