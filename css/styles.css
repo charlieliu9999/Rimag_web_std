@@ -778,7 +778,7 @@ img {
 
 .form-control {
     width: 100%;
-    padding: 0.875rem;
+    padding: 1.5rem;
     border: 1px solid var(--border-color);
     border-radius: 4px;
     font-family: inherit;

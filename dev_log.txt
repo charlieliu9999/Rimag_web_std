@@ -20,4 +20,8 @@
 
 2024-07-30T09:00:00Z
 - Logo display issue resolved with `min-width`.
-- Addressed contact form input field height: increased padding for `.form-control` in `css/styles.css` from `0.75rem` to `0.875rem` to improve visual height and text spacing. 
+- Addressed contact form input field height: increased padding for `.form-control` in `css/styles.css` from `0.75rem` to `0.875rem` to improve visual height and text spacing.
+
+2024-07-30T09:15:00Z
+- User reported no visible change to form input height with 0.875rem padding.
+- Changed `.form-control` padding to `1.5rem` in `css/styles.css` for a more noticeable effect, as requested by user. 
