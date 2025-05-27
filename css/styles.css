@@ -169,6 +169,13 @@ img {
     margin: 0;
 }
 
+.logo-img {
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -905,6 +912,11 @@ textarea.form-control {
     color: var(--secondary-color);
 }
 
+.footer-logo .logo-img {
+    max-width: 160px;
+    margin-bottom: 0.5rem;
+}
+
 .footer-links {
     display: flex;
     flex-wrap: wrap;
@@ -1225,5 +1237,50 @@ textarea.form-control {
         min-width: 0;
         max-width: 100%;
         padding: 1rem 1.2rem;
+    }
+}
+
+.policy-keypoints {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+    padding: 2.2rem 2rem 2rem 2rem;
+    margin: 2.5rem 0 1.5rem 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.keypoints-title {
+    color: var(--primary-color);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.keypoints-list {
+    list-style: decimal inside;
+    color: var(--text-color);
+    font-size: 1.08rem;
+    line-height: 1.9;
+    padding-left: 0;
+    margin: 0;
+}
+
+.keypoints-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .policy-keypoints {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+    }
+    .keypoints-title {
+        font-size: 1.1rem;
+    }
+    .keypoints-list {
+        font-size: 0.98rem;
     }
 }
