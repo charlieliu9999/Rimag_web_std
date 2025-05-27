@@ -836,14 +836,26 @@ img {
 }
 
 .form-group {
-    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
+    min-width: 110px;
+    margin-bottom: 0;
     color: var(--light-text);
     font-weight: 500;
+    font-size: 1.05rem;
+    margin-right: 1.2rem;
+    text-align: right;
+}
+
+.form-group input.form-control,
+.form-group textarea.form-control {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
 }
 
 .form-control {
@@ -1115,6 +1127,17 @@ textarea.form-control {
     }
     textarea.form-control {
         min-height: 120px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .form-group label {
+        min-width: 0;
+        margin-bottom: 0.5rem;
+        text-align: left;
+        margin-right: 0;
     }
 }
 
