@@ -249,4 +249,182 @@
     .impact-cards-container {
         grid-template-columns: 1fr;
     }
-} 
+}
+
+/* --- 医保新规板块美化 --- */
+
+/* 统一section的上下padding */
+.section.new-policy {
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
+/* 卡片基础美化: 更柔和的阴影和过渡 */
+.policy-feature-card,
+.impact-card,
+.challenge-card,
+.solution-card,
+.policy-price-impact {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* 更柔和的阴影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.policy-feature-card:hover,
+.impact-card:hover,
+.challenge-card:hover,
+.solution-card:hover,
+.policy-price-impact:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* 悬停时更明显的阴影 */
+}
+
+/* 特色卡片 .policy-feature-card */
+.policy-feature-card {
+    background-color: #ffffff; /* 确保纯白背景 */
+    border: 1px solid #e9ecef; /* 添加淡灰色边框 */
+}
+
+.policy-feature-card .feature-icon {
+    background-color: rgba(0, 123, 255, 0.1); /* 使用主色调的浅色背景 */
+    color: #007bff; /* 主色调，假设为蓝色系 */
+    /* color: var(--primary-color); */ /* 如果变量可用 */
+}
+
+.policy-feature-card h4 {
+    color: #343a40; /* 深灰色标题，代替 var(--dark-blue) */
+    font-weight: 600;
+}
+
+.policy-feature-card p,
+.policy-feature-card ul {
+    color: #555; /* 调整正文颜色，代替 var(--text-muted) */
+    font-size: 0.92rem; /* 略微调整字号 */
+}
+
+.policy-feature-card ul li i {
+    color: #007bff; /* 主色调图标 */
+    /* color: var(--primary-color); */
+}
+
+/* 对比表格 .policy-comparison-table */
+.policy-comparison-table th {
+    background-color: #f8f9fa; /* 表头背景 */
+    color: #343a40; /* 表头文字颜色 */
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.policy-comparison-table td {
+    font-size: 0.88rem;
+    color: #495057;
+}
+
+.policy-comparison-table th,
+.policy-comparison-table td {
+    border: 1px solid #dee2e6; /* 统一边框颜色 */
+    padding: 12px 15px; /* 增加内边距 */
+}
+
+/* 区域大标题 */
+.policy-impact-section h3,
+.our-value-section h3,
+.policy-price-impact .price-impact-title { /* 将价格影响标题也纳入统一风格 */
+    font-size: 1.8rem; /* 增大标题字号 */
+    color: #2c3e50; /* 更现代的深蓝灰色 */
+    margin-bottom: 35px;
+    font-weight: 600;
+}
+
+.policy-impact-section h3::after,
+.our-value-section h3::after,
+.policy-price-impact .price-impact-title::after { /* 为价格影响标题也添加下划线 */
+    content: '';
+    display: block;
+    width: 70px; /* 调整下划线宽度 */
+    height: 3px;
+    background-color: #007bff; /* 主色调下划线 */
+    /* background-color: var(--primary-color); */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* 影响卡片 .impact-card */
+.impact-card {
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    padding: 30px 25px; /* 调整内边距 */
+}
+
+.impact-card .impact-icon {
+    font-size: 2.8rem; /* 增大图标 */
+}
+/* 重新定义影响卡片图标颜色，使其更柔和或专业 */
+.impact-icon.hospital-impact { color: #28a745; } /* 绿色 - 医院 */
+.impact-icon.patient-impact { color: #17a2b8; } /* 蓝色 - 患者 */
+.impact-icon.industry-impact { color: #ffc107; } /* 黄色 - 行业 */
+
+.impact-card h5 {
+    font-size: 1.2rem;
+    color: #343a40;
+    font-weight: 600;
+}
+
+.impact-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* 价格影响列表 .policy-price-impact (继承卡片基础样式) */
+.policy-price-impact {
+    background-color: #fff; /* 统一背景 */
+    border: 1px solid #e9ecef; /* 统一边框 */
+    padding: 30px; /* 调整内边距 */
+}
+.policy-price-impact .price-impact-list {
+    font-size: 0.95rem; /* 调整字体 */
+    color: #495057;
+    padding-left: 5px; /* 微调列表缩进 */
+}
+.policy-price-impact .price-impact-list li {
+    margin-bottom: 12px; /* 调整列表项间距 */
+}
+
+/* 挑战与解决方案卡片 */
+.challenge-card, .solution-card {
+    padding: 30px; /* 增加内边距 */
+    border-radius: 8px; /* 统一圆角 */
+}
+
+.challenge-card {
+    background-color: #fff7f8; /* 淡红色背景 */
+    border-left-color: #e74c3c; /* 更鲜明的红色 */
+}
+
+.solution-card {
+    background-color: #f4fbf7; /* 淡绿色背景 */
+    border-left-color: #2ecc71; /* 更鲜明的绿色 */
+}
+
+.challenge-card h4, .solution-card h4 {
+    font-size: 1.35rem; /* 调整标题字号 */
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.challenge-icon { color: #e74c3c; }
+.solution-icon { color: #2ecc71; }
+
+.challenge-card ul, .solution-card ul {
+    font-size: 0.92rem;
+    line-height: 1.9;
+}
+
+.challenge-card ul li i { color: #e74c3c; }
+.solution-card ul li i { color: #2ecc71; }
+
+.solution-card p {
+    font-size: 0.92rem;
+    color: #555;
+}
+
+/* 响应式调整中的间距等可按需进一步优化 */ 
