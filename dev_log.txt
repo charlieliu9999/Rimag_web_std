@@ -24,4 +24,13 @@
 
 2024-07-30T09:15:00Z
 - User reported no visible change to form input height with 0.875rem padding.
-- Changed `.form-control` padding to `1.5rem` in `css/styles.css` for a more noticeable effect, as requested by user. 
+- Changed `.form-control` padding to `1.5rem` in `css/styles.css` for a more noticeable effect, as requested by user.
+
+2024-07-30T09:30:00Z
+- User reported no visible change to form input height even with 1.5rem padding.
+- As per user request, changed `.form-control` style to use an underline instead of a full border.
+    - Removed existing border and border-radius.
+    - Added `border-bottom: 1px solid var(--border-color);`.
+    - Set `background-color: transparent;`.
+    - Adjusted `padding` to `0.75rem 0.25rem;`.
+    - Updated `:focus` styles for underline (color and width change). 

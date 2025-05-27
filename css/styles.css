@@ -769,7 +769,7 @@ img {
 
 .form-row {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .form-row .form-group {
@@ -778,18 +778,20 @@ img {
 
 .form-control {
     width: 100%;
-    padding: 1.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+    padding: 0.75rem 0.25rem;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 0;
     font-family: inherit;
     color: var(--text-color);
     transition: var(--transition);
+    background-color: transparent;
 }
 
 .form-control:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+    border-bottom-color: var(--primary-color);
+    border-bottom-width: 2px;
 }
 
 textarea.form-control {
