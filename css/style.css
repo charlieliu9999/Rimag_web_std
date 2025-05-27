@@ -1,0 +1,24 @@
+.policy-price-impact {
+  background: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 28px 32px 20px 32px;
+  margin: 32px 0 0 0;
+}
+.price-impact-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin-bottom: 18px;
+}
+.price-impact-list {
+  list-style: disc inside;
+  color: #223;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin: 0;
+  padding-left: 0;
+}
+.price-impact-list li {
+  margin-bottom: 10px;
+} 
