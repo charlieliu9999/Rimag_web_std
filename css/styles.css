@@ -808,6 +808,17 @@ img {
     text-align: center;
 }
 
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 0;
+}
+
 .form-group {
     margin-bottom: 1.25rem;
 }
@@ -817,15 +828,6 @@ img {
     margin-bottom: 0.5rem;
     color: var(--light-text);
     font-weight: 500;
-}
-
-.form-row {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.form-row .form-group {
-    flex: 1;
 }
 
 .form-control {
