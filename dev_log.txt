@@ -16,4 +16,8 @@
 
 2024-07-30T08:45:00Z
 - Logo text wrapping issue persisted after `flex-shrink: 0`.
-- Applied `min-width: 180px;` to `.logo` class in `css/styles.css` as an alternative fix to ensure sufficient space. 
+- Applied `min-width: 180px;` to `.logo` class in `css/styles.css` as an alternative fix to ensure sufficient space.
+
+2024-07-30T09:00:00Z
+- Logo display issue resolved with `min-width`.
+- Addressed contact form input field height: increased padding for `.form-control` in `css/styles.css` from `0.75rem` to `0.875rem` to improve visual height and text spacing. 
