@@ -153,6 +153,7 @@ img {
 .logo {
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
 }
 
 .logo h1 {

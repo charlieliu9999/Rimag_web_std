@@ -8,4 +8,8 @@
     - Changed text color of .main-title, .sub-title, .hero-text to var(--text-color) (#333333) for better contrast.
     - Adjusted .hero-overlay to a light semi-transparent white (rgba(255, 255, 255, 0.7)) to match the visual and ensure text readability.
     - Removed text-shadows and animations from hero text for simplification.
-- No changes made to logo as current CSS (white navbar background, dark blue logo text) should provide good visibility. Awaiting further clarification if logo issue persists. 
+- No changes made to logo as current CSS (white navbar background, dark blue logo text) should provide good visibility. Awaiting further clarification if logo issue persists.
+
+2024-07-30T08:30:00Z
+- Addressed logo text wrapping issue.
+- Applied `flex-shrink: 0;` to `.logo` class in `css/styles.css` to prevent it from shrinking in the navbar's flex container, ensuring sufficient width for the logo text. 
