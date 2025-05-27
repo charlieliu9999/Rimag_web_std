@@ -292,77 +292,60 @@ img {
     background-color: var(--light-bg);
 }
 
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 0;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 3px;
-    background-color: var(--secondary-color);
-    transform: translateX(-50%);
-}
-
-.timeline-item {
-    position: relative;
+/* 新规卡片样式 */
+.policy-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
 }
 
-.timeline-icon {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: var(--secondary-color);
-    color: var(--white);
+.policy-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    z-index: 2;
+    text-align: center;
+}
+
+.policy-card:hover {
+    transform: translateY(-5px);
     box-shadow: var(--shadow-md);
 }
 
-.timeline-icon i {
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: 2rem;
+    transition: var(--transition);
+}
+
+.policy-card:hover .card-icon {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.card-content h3 {
+    color: var(--primary-color);
     font-size: 1.25rem;
+    margin-bottom: 1rem;
 }
 
-.timeline-content {
-    width: 45%;
-    padding: 1.5rem;
-    background-color: var(--white);
-    border-radius: 8px;
-    box-shadow: var(--shadow-sm);
-    position: relative;
-}
-
-.timeline-item:nth-child(odd) .timeline-content {
-    margin-right: auto;
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-    margin-left: auto;
-}
-
-.timeline-content h3 {
-    color: var(--secondary-color);
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-.timeline-content p {
-    margin-bottom: 0;
+.card-content p {
     color: var(--light-text);
+    margin: 0;
+    line-height: 1.6;
 }
 
 .info-card {
@@ -487,9 +470,10 @@ img {
 
 .process-steps {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     position: relative;
+    margin-bottom: 3rem;
 }
 
 .process-steps::before {
@@ -504,9 +488,10 @@ img {
 }
 
 .process-step {
-    width: 18%;
+    width: 30%;
     position: relative;
     z-index: 2;
+    margin: 0 1rem;
 }
 
 .step-number {
@@ -533,6 +518,73 @@ img {
 .process-step p {
     font-size: 0.9rem;
     color: var(--light-text);
+}
+
+/* 新增：流程信息样式 */
+.process-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: var(--primary-light);
+    border-radius: 8px;
+}
+
+.info-item {
+    text-align: center;
+    padding: 1rem 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.info-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.info-item h4 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.info-item p {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* 优化卡片内容样式 */
+.highlight-card .card-content {
+    padding: 1.5rem;
+}
+
+.highlight-card .card-content h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.highlight-card .card-content h3 i {
+    margin-right: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.highlight-card .card-content p {
+    color: var(--light-text);
+    line-height: 1.6;
+    margin-bottom: 0;
 }
 
 /* 成功案例 */
@@ -939,8 +991,8 @@ textarea.form-control {
     }
     
     .process-steps {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
     
     .process-steps::before {
@@ -948,7 +1000,8 @@ textarea.form-control {
     }
     
     .process-step {
-        width: 45%;
+        width: 100%;
+        max-width: 300px;
         margin-bottom: 2rem;
     }
     
@@ -962,6 +1015,15 @@ textarea.form-control {
 
     .contact-wrapper {
         flex-direction: column;
+    }
+
+    .process-info {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .info-item {
+        width: 100%;
     }
 }
 
@@ -1010,4 +1072,49 @@ textarea.form-control {
     .footer-content {
         flex-direction: column;
     }
+
+    .policy-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .policy-card {
+        padding: 1.5rem;
+    }
+}
+
+/* 推荐语卡片样式 */
+.testimonial-card {
+    background-color: var(--primary-light);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    padding: 2rem 2.5rem;
+    margin: 2rem auto 0;
+    max-width: 700px;
+    text-align: left;
+    position: relative;
+}
+
+.testimonial-quote {
+    font-size: 1.15rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.testimonial-quote i {
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    font-size: 2rem;
+    color: var(--primary-color);
+    opacity: 0.3;
+}
+
+.testimonial-author {
+    text-align: right;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    font-style: italic;
 }

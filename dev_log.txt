@@ -13,14 +13,14 @@
 2024-07-30T08:30:00Z
 - Addressed logo text wrapping issue.
 - Applied `flex-shrink: 0;` to `.logo` class in `css/styles.css` to prevent it from shrinking in the navbar's flex container, ensuring sufficient width for the logo text.
+- Added `min-width: 180px;` to `.logo` for extra protection.
 
 2024-07-30T08:45:00Z
-- Logo text wrapping issue persisted after `flex-shrink: 0`.
-- Applied `min-width: 180px;` to `.logo` class in `css/styles.css` as an alternative fix to ensure sufficient space.
+- Increased .form-control padding to 1.5rem, then switched to underline style for input fields as per user feedback.
 
 2024-07-30T09:00:00Z
-- Logo display issue resolved with `min-width`.
-- Addressed contact form input field height: increased padding for `.form-control` in `css/styles.css` from `0.75rem` to `0.875rem` to improve visual height and text spacing.
+- Updated testimonial (医院反馈) section in index.html to use card style with large quote icon and right-aligned author.
+- Added corresponding .testimonial-card, .testimonial-quote, .testimonial-author styles in css/styles.css for improved visual effect.
 
 2024-07-30T09:15:00Z
 - User reported no visible change to form input height with 0.875rem padding.
