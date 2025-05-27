@@ -2,41 +2,86 @@
  * 医学影像检查项目标准化服务单页网站脚本
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-    // 初始化各个组件
-    initializeMobileMenu();
-    initializeSmoothScroll();
-    initializeTabSystem();
-    initializeImageSlider();
-    initializeContactForm();
-    
-    // 监听滚动事件，添加导航栏效果
-    window.addEventListener('scroll', handleScroll);
-});
+document.addEventListener('DOMContentLoaded', function() {
+    // 导航栏滚动效果
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
 
-/**
- * 初始化移动端菜单
- */
-function initializeMobileMenu() {
+    // 移动端菜单切换
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.querySelector('.nav-menu');
     
-    if (mobileMenu && navMenu) {
-        mobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-        
-        // 点击导航链接后关闭菜单
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
+    mobileMenu.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // 关闭移动端菜单
                 mobileMenu.classList.remove('active');
                 navMenu.classList.remove('active');
-            });
+            }
+        });
+    });
+
+    // 表单提交处理
+    const consultForm = document.getElementById('consultForm');
+    if (consultForm) {
+        consultForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // 这里可以添加表单提交逻辑
+            alert('感谢您的咨询，我们会尽快与您联系！');
+            this.reset();
         });
     }
-}
+
+    // 添加页面滚动动画
+    const fadeElements = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    // 案例展示标签页切换
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // 移除所有活动状态
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabPanes.forEach(p => p.classList.remove('active'));
+            
+            // 添加当前活动状态
+            this.classList.add('active');
+            const tabId = this.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+});
 
 /**
  * 初始化平滑滚动
@@ -63,77 +108,6 @@ function initializeSmoothScroll() {
             }
         });
     });
-}
-
-/**
- * 初始化选项卡系统
- */
-function initializeTabSystem() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // 移除所有激活状态
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-pane').forEach(pane => {
-                pane.classList.remove('active');
-            });
-            
-            // 设置当前激活状态
-            button.classList.add('active');
-            const tabId = button.getAttribute('data-tab');
-            document.getElementById(tabId).classList.add('active');
-        });
-    });
-}
-
-/**
- * 初始化图片轮播
- */
-function initializeImageSlider() {
-    const caseImages = document.querySelectorAll('.case-images img');
-    let currentIndex = 0;
-    
-    if (caseImages.length > 1) {
-        // 每4秒切换一次图片
-        setInterval(() => {
-            caseImages[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % caseImages.length;
-            caseImages[currentIndex].classList.add('active');
-        }, 4000);
-    }
-}
-
-/**
- * 初始化联系表单
- */
-function initializeContactForm() {
-    const contactForm = document.getElementById('consultForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', event => {
-            event.preventDefault();
-            
-            // 获取表单数据
-            const formData = {
-                name: document.getElementById('name').value,
-                contact: document.getElementById('contact').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-            
-            // 验证表单
-            if (validateForm(formData)) {
-                // 模拟表单提交
-                console.log('表单数据:', formData);
-                alert('感谢您的咨询，我们的客服人员将尽快与您联系！');
-                contactForm.reset();
-            }
-        });
-    }
 }
 
 /**
@@ -179,24 +153,6 @@ function validateForm(formData) {
     }
     
     return isValid;
-}
-
-/**
- * 处理滚动事件
- */
-function handleScroll() {
-    const navbar = document.getElementById('navbar');
-    const scrollPosition = window.scrollY;
-    
-    // 根据滚动位置添加阴影效果
-    if (scrollPosition > 50) {
-        navbar.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-    } else {
-        navbar.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
-    }
-    
-    // 高亮当前导航项
-    highlightCurrentSection();
 }
 
 /**

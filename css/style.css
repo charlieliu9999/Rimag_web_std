@@ -1,430 +1,1192 @@
-.policy-price-impact {
-  background: #f8fafc;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  padding: 28px 32px 20px 32px;
-  margin: 32px 0 0 0;
-}
-.price-impact-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1a365d;
-  margin-bottom: 18px;
-}
-.price-impact-list {
-  list-style: disc inside;
-  color: #223;
-  font-size: 1.05rem;
-  line-height: 1.9;
-  margin: 0;
-  padding-left: 0;
-}
-.price-impact-list li {
-  margin-bottom: 10px;
+/* 样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.new-policy .policy-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
+/* 基础样式 */
+:root {
+    --primary-color: #0056b3; /* 深蓝色 */
+    --secondary-color: #003d7a; /* 更深的蓝色 */
+    --accent-color: #00aaff; /* 亮蓝色 */
+    --text-color: #333;
+    --light-gray: #f8f9fa; /* 浅灰色 */
+    --medium-gray: #e9ecef; /* 中灰色 */
+    --dark-gray: #495057; /* 深灰色文本 */
+    --border-color: #dee2e6; /* 边框颜色 */
+    --success-color: #28a745; /* 绿色 */
+    --warning-color: #ffc107; /* 黄色 */
+    --danger-color: #dc3545; /* 红色 */
+    --white: #fff;
+    --black: #000;
 }
 
-.policy-feature-card {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-    display: flex;
-    flex-direction: column;
-}
-
-.policy-feature-card .feature-icon {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    width: 50px;
-    height: 50px;
-    background-color: #eef2ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.policy-feature-card h4 {
-    font-size: 1.25rem;
-    color: var(--dark-blue);
-    margin-bottom: 10px;
-}
-
-.policy-feature-card p,
-.policy-feature-card ul {
-    font-size: 0.95rem;
+body {
+    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
     line-height: 1.7;
-    color: var(--text-muted);
-    margin-bottom: 15px;
+    color: var(--text-color);
+    background-color: var(--light-gray); /* 设置页面背景色 */
 }
 
-.policy-feature-card ul {
-    list-style: none;
-    padding-left: 0;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* 调整内边距 */
 }
 
-.policy-feature-card ul li {
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
+/* 通用章节样式 */
+.section {
+    padding: 80px 0; /* 统一章节上下边距 */
+    background-color: var(--white); /* 章节背景色 */
+    margin-bottom: 30px; /* 章节间距 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 添加轻微阴影 */
 }
 
-.policy-feature-card ul li i {
-    color: var(--primary-color);
-    margin-right: 10px;
-    font-size: 1.1em;
+.section:nth-child(odd) {
+    background-color: var(--light-gray); /* 奇数章节使用浅灰色背景 */
 }
 
-.policy-comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    font-size: 0.9rem;
-}
-
-.policy-comparison-table th,
-.policy-comparison-table td {
-    border: 1px solid #e0e0e0;
-    padding: 10px 12px;
-    text-align: left;
-}
-
-.policy-comparison-table th {
-    background-color: #f8f9fa;
-    font-weight: 600;
-    color: var(--dark-blue);
-}
-
-.policy-comparison-table tbody tr:nth-child(even) {
-    background-color: #fdfdfd;
-}
-
-.policy-impact-section h3,
-.our-value-section h3 {
+.section-header {
     text-align: center;
-    font-size: 1.6rem;
-    color: var(--dark-blue);
-    margin-bottom: 30px;
-    position: relative;
+    margin-bottom: 60px; /* 增加头部间距 */
 }
 
-.policy-impact-section h3::after,
-.our-value-section h3::after {
+.section-header h2 {
+    font-size: 2.8em; /* 调整标题大小 */
+    color: var(--dark-gray); /* 标题颜色 */
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
     content: '';
     display: block;
     width: 60px;
-    height: 3px;
-    background-color: var(--primary-color);
-    margin: 8px auto 0;
-}
-
-.impact-cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-bottom: 40px;
-}
-
-.impact-card {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 25px 20px;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.impact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-.impact-card .impact-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    display: inline-block;
-}
-.impact-icon.hospital-impact { color: #28a745; }
-.impact-icon.patient-impact { color: #17a2b8; }
-.impact-icon.industry-impact { color: #fd7e14; }
-
-.impact-card h5 {
-    font-size: 1.15rem;
-    color: var(--dark-blue);
-    margin-bottom: 10px;
-}
-
-.impact-card p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--text-muted);
-}
-
-.challenge-solution-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: flex-start;
-}
-
-.challenge-card, .solution-card {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    padding: 25px;
-    border-left: 5px solid;
-}
-
-.challenge-card {
-    border-left-color: #dc3545; /* Red for challenge */
-}
-
-.solution-card {
-    border-left-color: #28a745; /* Green for solution */
-}
-
-.challenge-card h4, .solution-card h4 {
-    font-size: 1.3rem;
-    color: var(--dark-blue);
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.challenge-icon, .solution-icon {
-    font-size: 1.5em;
-    margin-right: 12px;
-}
-.challenge-icon { color: #dc3545; }
-.solution-icon { color: #28a745; }
-
-.challenge-card ul, .solution-card ul {
-    list-style: none;
-    padding-left: 0;
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: var(--text-color);
-}
-
-.challenge-card ul li, .solution-card ul li {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: flex-start;
-}
-
-.challenge-card ul li i, .solution-card ul li i {
-    margin-right: 10px;
-    margin-top: 4px;
-    font-size: 1em;
-}
-
-.challenge-card ul li i { color: #dc3545; }
-.solution-card ul li i { color: #28a745; }
-
-.solution-card p {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--text-muted);
-    margin-bottom: 15px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .challenge-solution-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .policy-grid {
-        grid-template-columns: 1fr;
-    }
-    .impact-cards-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* --- 医保新规板块美化 --- */
-
-/* 统一section的上下padding */
-.section.new-policy {
-    padding-top: 50px;
-    padding-bottom: 60px;
-}
-
-/* 卡片基础美化: 更柔和的阴影和过渡 */
-.policy-feature-card,
-.impact-card,
-.challenge-card,
-.solution-card,
-.policy-price-impact {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* 更柔和的阴影 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.policy-feature-card:hover,
-.impact-card:hover,
-.challenge-card:hover,
-.solution-card:hover,
-.policy-price-impact:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* 悬停时更明显的阴影 */
-}
-
-/* 特色卡片 .policy-feature-card */
-.policy-feature-card {
-    background-color: #ffffff; /* 确保纯白背景 */
-    border: 1px solid #e9ecef; /* 添加淡灰色边框 */
-}
-
-.policy-feature-card .feature-icon {
-    background-color: rgba(0, 123, 255, 0.1); /* 使用主色调的浅色背景 */
-    color: #007bff; /* 主色调，假设为蓝色系 */
-    /* color: var(--primary-color); */ /* 如果变量可用 */
-}
-
-.policy-feature-card h4 {
-    color: #343a40; /* 深灰色标题，代替 var(--dark-blue) */
-    font-weight: 600;
-}
-
-.policy-feature-card p,
-.policy-feature-card ul {
-    color: #555; /* 调整正文颜色，代替 var(--text-muted) */
-    font-size: 0.92rem; /* 略微调整字号 */
-}
-
-.policy-feature-card ul li i {
-    color: #007bff; /* 主色调图标 */
-    /* color: var(--primary-color); */
-}
-
-/* 对比表格 .policy-comparison-table */
-.policy-comparison-table th {
-    background-color: #f8f9fa; /* 表头背景 */
-    color: #343a40; /* 表头文字颜色 */
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.policy-comparison-table td {
-    font-size: 0.88rem;
-    color: #495057;
-}
-
-.policy-comparison-table th,
-.policy-comparison-table td {
-    border: 1px solid #dee2e6; /* 统一边框颜色 */
-    padding: 12px 15px; /* 增加内边距 */
-}
-
-/* 区域大标题 */
-.policy-impact-section h3,
-.our-value-section h3,
-.policy-price-impact .price-impact-title { /* 将价格影响标题也纳入统一风格 */
-    font-size: 1.8rem; /* 增大标题字号 */
-    color: #2c3e50; /* 更现代的深蓝灰色 */
-    margin-bottom: 35px;
-    font-weight: 600;
-}
-
-.policy-impact-section h3::after,
-.our-value-section h3::after,
-.policy-price-impact .price-impact-title::after { /* 为价格影响标题也添加下划线 */
-    content: '';
-    display: block;
-    width: 70px; /* 调整下划线宽度 */
-    height: 3px;
-    background-color: #007bff; /* 主色调下划线 */
-    /* background-color: var(--primary-color); */
+    height: 4px;
+    background: var(--primary-color);
     margin: 10px auto 0;
     border-radius: 2px;
 }
 
-/* 影响卡片 .impact-card */
-.impact-card {
-    background-color: #fff;
-    border: 1px solid #e9ecef;
-    padding: 30px 25px; /* 调整内边距 */
+.section-desc {
+    font-size: 1.3em; /* 调整描述大小 */
+    color: var(--dark-gray); /* 描述颜色 */
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.impact-card .impact-icon {
-    font-size: 2.8rem; /* 增大图标 */
+/* 导航栏样式 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 15px 0; /* 调整内边距 */
+    transition: padding 0.3s ease-in-out;
 }
-/* 重新定义影响卡片图标颜色，使其更柔和或专业 */
-.impact-icon.hospital-impact { color: #28a745; } /* 绿色 - 医院 */
-.impact-icon.patient-impact { color: #17a2b8; } /* 蓝色 - 患者 */
-.impact-icon.industry-impact { color: #ffc107; } /* 黄色 - 行业 */
 
-.impact-card h5 {
-    font-size: 1.2rem;
-    color: #343a40;
+.navbar.scrolled {
+    padding: 10px 0; /* 滚动后减小内边距 */
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-img {
+    height: 40px; /* 调整logo大小 */
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    color: var(--dark-gray); /* 链接颜色 */
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* 头部横幅样式 */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 100px 0; /* 调整上下内边距，保证内容有空间 */
+    color: white;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+    z-index: 0;
+    transform: scale(1.1); /* 图片轻微放大，增加视差感 */
+    filter: brightness(0.8); /* 调整亮度 */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* 深色叠加层 */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    opacity: 0; /* 初始状态设置为透明 */
+    transform: translateY(20px); /* 初始位置下移 */
+    animation: fadeIn 1.2s ease-out forwards; /* 应用淡入动画 */
+}
+
+.main-title {
+    font-size: 4em; /* 进一步增大标题 */
+    margin-bottom: 30px; /* 调整底部间距 */
+    font-weight: 700;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4); /* 调整文本阴影 */
+}
+
+.sub-title {
+    font-size: 2.2em; /* 调整副标题大小 */
+    margin-bottom: 40px; /* 调整底部间距 */
+    font-weight: 400;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* 调整文本阴影 */
+}
+
+.hero-text {
+    font-size: 1.4em; /* 调整文本大小 */
+    margin-bottom: 60px; /* 调整底部间距 */
+    opacity: 0.95;
+}
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    padding: 12px 35px; /* 调整内边距 */
+    border-radius: 5px;
+    text-decoration: none;
     font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
 }
 
-.impact-card p {
-    font-size: 0.9rem;
-    color: #555;
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(0,86,179,0.3);
 }
 
-/* 价格影响列表 .policy-price-impact (继承卡片基础样式) */
-.policy-price-impact {
-    background-color: #fff; /* 统一背景 */
-    border: 1px solid #e9ecef; /* 统一边框 */
+.btn-primary:hover {
+    background: var(--secondary-color);
+    box-shadow: 0 6px 20px rgba(0,61,122,0.4);
+    transform: translateY(-2px);
+}
+
+/* 医保新规样式 */
+.new-policy .policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 调整最小宽度 */
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.new-policy .policy-feature-card {
+    background: var(--white);
     padding: 30px; /* 调整内边距 */
-}
-.policy-price-impact .price-impact-list {
-    font-size: 0.95rem; /* 调整字体 */
-    color: #495057;
-    padding-left: 5px; /* 微调列表缩进 */
-}
-.policy-price-impact .price-impact-list li {
-    margin-bottom: 12px; /* 调整列表项间距 */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* 调整阴影 */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* 挑战与解决方案卡片 */
-.challenge-card, .solution-card {
-    padding: 30px; /* 增加内边距 */
-    border-radius: 8px; /* 统一圆角 */
+.new-policy .policy-feature-card:hover {
+    transform: translateY(-5px);
 }
 
-.challenge-card {
-    background-color: #fff7f8; /* 淡红色背景 */
-    border-left-color: #e74c3c; /* 更鲜明的红色 */
-}
-
-.solution-card {
-    background-color: #f4fbf7; /* 淡绿色背景 */
-    border-left-color: #2ecc71; /* 更鲜明的绿色 */
-}
-
-.challenge-card h4, .solution-card h4 {
-    font-size: 1.35rem; /* 调整标题字号 */
-    font-weight: 600;
+.new-policy .feature-icon {
+    font-size: 2.2em; /* 调整图标大小 */
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
-.challenge-icon { color: #e74c3c; }
-.solution-icon { color: #2ecc71; }
-
-.challenge-card ul, .solution-card ul {
-    font-size: 0.92rem;
-    line-height: 1.9;
+.new-policy .policy-feature-card h4 {
+    font-size: 1.6em; /* 调整标题大小 */
+    color: var(--dark-gray);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--medium-gray); /* 添加底部分隔线 */
+    padding-bottom: 15px;
 }
 
-.challenge-card ul li i { color: #e74c3c; }
-.solution-card ul li i { color: #2ecc71; }
-
-.solution-card p {
-    font-size: 0.92rem;
-    color: #555;
+.new-policy .policy-feature-card ul {
+    list-style: none;
+    padding: 0;
 }
 
-/* 响应式调整中的间距等可按需进一步优化 */ 
+.new-policy .policy-feature-card li {
+    margin-bottom: 15px; /* 调整列表项间距 */
+    display: flex;
+    align-items: flex-start; /* 将这里从 center 改为 flex-start */
+    gap: 12px; /* 调整图标与文本间距 */
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.new-policy .policy-feature-card li i {
+    color: var(--success-color); /* 勾选图标颜色 */
+}
+
+.new-policy .policy-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.new-policy .policy-comparison-table th:first-child,
+.new-policy .policy-comparison-table td:first-child {
+    width: 20%; /* 分配更多宽度给第一列 */
+    white-space: nowrap; /* 防止文字换行 */
+}
+
+.new-policy .policy-comparison-table th,
+.new-policy .policy-comparison-table td {
+    padding: 15px; /* 调整表格内边距 */
+    border: 1px solid var(--border-color);
+    text-align: left;
+    /* 其他列可以根据剩余空间自动分配 */
+}
+
+.new-policy .policy-comparison-table th {
+    background: var(--medium-gray); /* 表头背景 */
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+.new-policy .policy-comparison-table tr:nth-child(even) {
+    background-color: var(--light-gray); /* 交替行背景色 */
+}
+
+/* 影响分析卡片 */
+.new-policy .policy-impact-section h3 {
+    font-size: 2em;
+    color: var(--dark-gray);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.new-policy .impact-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 调整最小宽度 */
+    gap: 30px;
+    margin: 0 0 60px 0; /* 调整外边距 */
+}
+
+.new-policy .impact-card {
+    background: var(--white);
+    padding: 30px; /* 调整内边距 */
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08); /* 调整阴影 */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.new-policy .impact-card:hover {
+    transform: translateY(-5px);
+}
+
+.new-policy .impact-icon {
+    font-size: 3em; /* 调整图标大小 */
+    margin-bottom: 20px;
+}
+
+.new-policy .impact-card h5 {
+    font-size: 1.4em; /* 调整标题大小 */
+    color: var(--dark-gray);
+    margin-bottom: 15px;
+}
+
+.new-policy .impact-card p {
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.hospital-impact { color: var(--primary-color); }
+.patient-impact { color: var(--success-color); }
+.industry-impact { color: var(--warning-color); }
+
+/* 价格影响分析 */
+.new-policy .policy-price-impact {
+    background: var(--medium-gray); /* 调整背景色 */
+    padding: 40px; /* 调整内边距 */
+    border-radius: 10px;
+    margin-bottom: 60px;
+}
+
+.new-policy .price-impact-title {
+    font-size: 2em; /* 调整标题大小 */
+    color: var(--dark-gray);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.new-policy .price-impact-list {
+    list-style: none; /* 移除默认列表样式 */
+    padding: 0;
+}
+
+.new-policy .price-impact-list li {
+    margin-bottom: 20px;
+    padding-left: 25px; /* 调整内边距 */
+    position: relative;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.new-policy .price-impact-list li strong {
+    color: var(--dark-gray);
+}
+
+.new-policy .price-impact-list li::before {
+    content: "\2022"; /* 使用圆点作为列表标记 */
+    position: absolute;
+    left: 0;
+    color: var(--primary-color); /* 标记颜色 */
+    font-weight: bold;
+}
+
+/* 挑战与解决方案 */
+.new-policy .our-value-section h3 {
+    font-size: 2em;
+    color: var(--dark-gray);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.new-policy .challenge-solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 调整最小宽度 */
+    gap: 30px;
+    margin-top: 0;
+}
+
+.new-policy .challenge-card,
+.new-policy .solution-card {
+    background: var(--white);
+    padding: 30px; /* 调整内边距 */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* 调整阴影 */
+}
+
+.new-policy .challenge-icon,
+.new-policy .solution-icon {
+    font-size: 2.2em; /* 调整图标大小 */
+    margin-bottom: 20px;
+}
+
+.new-policy .challenge-card h4,
+.new-policy .solution-card h4 {
+    font-size: 1.6em; /* 调整标题大小 */
+    color: var(--dark-gray);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--medium-gray); /* 添加底部分隔线 */
+    padding-bottom: 15px;
+}
+
+.new-policy .challenge-card ul,
+.new-policy .solution-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.new-policy .challenge-card li,
+.new-policy .solution-card li {
+    margin-bottom: 15px; /* 调整列表项间距 */
+    display: flex;
+    align-items: flex-start; /* 将这里从 center 改为 flex-start */
+    gap: 12px; /* 调整图标与文本间距 */
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.new-policy .challenge-card li i {
+    color: var(--danger-color); /* 图标颜色 */
+}
+
+.new-policy .solution-card li i {
+    color: var(--success-color); /* 图标颜色 */
+}
+.new-policy .challenge-card p,
+.new-policy .solution-card p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.new-policy .solution-card strong {
+    color: var(--dark-gray);
+}
+
+/* 核心优势样式 */
+.services .service-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.services .highlight-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease-in-out;
+}
+
+.services .highlight-card:hover {
+    transform: translateY(-5px);
+}
+
+.services .card-img {
+    width: 100%;
+    height: 220px; /* 调整图片高度 */
+    object-fit: cover;
+}
+
+.services .card-content {
+    padding: 25px; /* 调整内边距 */
+}
+
+.services .card-content h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: var(--dark-gray);
+}
+
+.services .card-content h3 i {
+    color: var(--primary-color);
+}
+
+.services .card-content p {
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.services .process-title {
+    font-size: 2em;
+    color: var(--dark-gray);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.services .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin: 40px 0 60px 0;
+    position: relative;
+}
+
+.services .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--medium-gray);
+    z-index: 0;
+}
+
+.services .process-step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: var(--white); /* 步骤背景色 */
+    padding-top: 20px; /* 调整内边距 */
+}
+
+.services .step-number {
+    width: 50px; /* 调整数字圈大小 */
+    height: 50px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-weight: bold;
+    font-size: 1.3em;
+    border: 3px solid var(--white); /* 数字圈边框 */
+}
+
+.services .process-step h4 {
+    font-size: 1.3em;
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+}
+
+.services .process-step p {
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.services .process-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    background: var(--medium-gray); /* 信息背景色 */
+    padding: 30px; /* 调整内边距 */
+    border-radius: 10px;
+}
+
+.services .info-item {
+    text-align: center;
+}
+
+.services .info-item i {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.services .info-item h4 {
+    font-size: 1.4em;
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+}
+
+.services .info-item p {
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+/* 为什么选择我们样式 */
+.why-choose-us-main .why-choose-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 调整最小宽度 */
+    gap: 20px;
+}
+
+.why-choose-us-main .why-choose-item {
+    background: var(--white);
+    padding: 20px; /* 调整内边距 */
+    border-left: 4px solid var(--primary-color); /* 左侧强调边框 */
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 15px; /* 调整图标与文本间距 */
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.why-choose-us-main .why-choose-item i {
+    color: var(--success-color); /* 图标颜色 */
+    font-size: 1.3em;
+}
+
+/* 成功案例样式 */
+.cases .cases-wrapper {
+    display: flex; /* 使用flex布局 */
+    gap: 40px;
+    flex-wrap: wrap; /* 允许换行 */
+}
+
+.cases .case-images {
+    flex: 1; /* 占据可用空间 */
+    min-width: 300px; /* 最小宽度 */
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.cases .case-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.cases .case-images img.active {
+    opacity: 1;
+    position: static; /* 活动图片使用静态定位 */
+}
+
+.cases .case-content {
+    flex: 2; /* 占据更多空间 */
+    min-width: 350px; /* 最小宽度 */
+    background: var(--white);
+    padding: 30px; /* 调整内边距 */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.cases .case-tabs {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cases .tab-btn {
+    padding: 15px 20px; /* 调整内边距 */
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
+    border-bottom: 3px solid transparent;
+    margin-right: 20px;
+}
+
+.cases .tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    font-weight: 600;
+}
+
+.cases .tab-pane {
+    display: none;
+}
+
+.cases .tab-pane.active {
+    display: block;
+}
+
+.cases .tab-pane h3 {
+    font-size: 1.6em;
+    color: var(--dark-gray);
+    margin-bottom: 20px;
+}
+
+.cases .tab-pane ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cases .tab-pane li {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: var(--text-color);
+    position: relative;
+    padding-left: 20px;
+}
+
+.cases .tab-pane li::before {
+    content: "\2022"; /* 使用圆点 */
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.cases .testimonial-card {
+    background: var(--white); /* 调整背景色 */
+    padding: 40px; /* 调整内边距 */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-top: 60px; /* 调整上边距 */
+    text-align: right;
+    font-style: italic;
+    color: var(--dark-gray);
+}
+
+.cases .testimonial-quote {
+    font-size: 1.4em; /* 调整字体大小 */
+    margin-bottom: 25px;
+}
+
+.cases .testimonial-quote i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.cases .testimonial-author {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* 联系我们样式 */
+.contact .contact-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px; /* 调整间距 */
+}
+
+.contact .contact-info {
+    display: grid;
+    gap: 30px;
+    background: var(--white); /* 添加卡片背景 */
+    padding: 30px; /* 添加内边距 */
+    border-radius: 10px; /* 添加圆角 */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* 添加阴影 */
+}
+
+.contact .info-item {
+    display: flex; /* info-item 内部使用flex排列图标和详情 */
+    align-items: center;
+    gap: 20px;
+    /* 移除 info-box 原有的背景、内边距、阴影等样式 */
+}
+
+.contact .info-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em; /* 调整图标大小 */
+}
+
+.contact .info-details h3 {
+    font-size: 1.3em;
+    color: var(--dark-gray);
+    margin-bottom: 5px;
+}
+
+.contact .info-details p {
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.contact .contact-form {
+    background: var(--white); /* 表单背景色 */
+    padding: 30px; /* 调整内边距 */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.contact .form-title {
+    font-size: 1.8em;
+    color: var(--dark-gray);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact .form-group {
+    margin-bottom: 20px; /* 调整底部间距 */
+    display: flex; /* 使用Flexbox布局 */
+    align-items: center; /* 垂直居中对齐 */
+    gap: 15px; /* 标签和输入框之间的间距 */
+}
+
+.contact .form-group label {
+    display: block; /* 保持label为块级元素 */
+    margin-bottom: 0; /* 移除底部margin */
+    font-weight: 600;
+    color: var(--dark-gray);
+    font-size: 1.1em;
+    flex-shrink: 0; /* 防止标签收缩 */
+    width: 100px; /* 给标签固定宽度 */
+}
+
+.contact .form-group input,
+.contact .form-group textarea {
+    width: 100%; /* 输入框占据剩余宽度 */
+    padding: 10px; /* 调整内边距 */
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease-in-out;
+    flex-grow: 1; /* 允许输入框增长 */
+}
+
+/* 调整textarea的高度 */
+.contact .form-group textarea {
+    height: 100px; /* 固定textarea高度 */
+    resize: vertical; /* 允许垂直调整大小 */
+}
+
+/* 调整移动端form-group布局 */
+@media (max-width: 576px) {
+    .contact .form-group {
+        flex-direction: column; /* 在小屏幕上变回垂直布局 */
+        align-items: flex-start;
+        gap: 8px; /* 调整垂直间距 */
+    }
+
+    .contact .form-group label {
+        width: auto; /* 移除固定宽度 */
+    }
+}
+
+.contact .btn-primary {
+    width: 100%; /* 按钮宽度 */
+    padding: 15px; /* 调整内边距 */
+    font-size: 1.2em;
+}
+
+/* 底部样式 */
+.footer {
+    background: var(--dark-gray); /* 调整背景色 */
+    color: var(--white);
+    padding: 60px 0 30px; /* 调整内边距 */
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column; /* 垂直布局 */
+    align-items: center;
+}
+
+.footer-logo {
+    margin-bottom: 40px;
+}
+
+.footer-logo img {
+    height: 50px; /* 调整logo大小 */
+    filter: brightness(0) invert(1); /* 使logo变为白色 */
+}
+
+.footer-links {
+    display: flex; /* 使用flex布局 */
+    gap: 50px; /* 调整间距 */
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* 允许换行 */
+    justify-content: center;
+}
+
+.footer-col {
+    text-align: center;
+}
+
+.footer-col h3 {
+    margin-bottom: 25px;
+    font-size: 1.3em;
+    color: var(--accent-color); /* 标题颜色 */
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col a {
+    color: var(--medium-gray); /* 链接颜色 */
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-col a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    width: 100%;
+    font-size: 1em;
+    color: var(--medium-gray);
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .section-header h2 {
+        font-size: 2.2em;
+    }
+
+    .section-desc {
+        font-size: 1.1em;
+    }
+
+    .main-title {
+        font-size: 3.2em;
+    }
+
+    .sub-title {
+        font-size: 1.8em;
+    }
+
+    .hero-text {
+        font-size: 1.2em;
+    }
+
+    .new-policy .policy-grid,
+    .new-policy .impact-cards-container,
+    .new-policy .challenge-solution-grid,
+    .services .service-highlights,
+    .services .process-steps,
+    .services .process-info,
+    .why-choose-us-main .why-choose-list,
+    .contact .contact-wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .cases .cases-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .cases .case-content {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .footer-links {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .logo-img {
+        height: 35px;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .nav-link::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero {
+        padding: 120px 0 60px 0; /* 调整小屏幕上下内边距 */
+    }
+
+    .main-title {
+        font-size: 2.8em;
+    }
+
+    .sub-title {
+        font-size: 1.5em;
+    }
+
+    .hero-text {
+        font-size: 1em;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 2em;
+    }
+
+    .section-desc {
+        font-size: 1em;
+    }
+
+    .new-policy .policy-grid,
+    .new-policy .impact-cards-container,
+    .new-policy .challenge-solution-grid,
+    .services .service-highlights,
+    .services .process-steps,
+    .services .process-info,
+    .why-choose-us-main .why-choose-list,
+    .contact .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .new-policy .policy-feature-card,
+    .new-policy .impact-card,
+    .new-policy .challenge-card,
+    .new-policy .solution-card,
+    .services .highlight-card,
+    .services .process-info,
+    .contact .info-box,
+    .contact .contact-form,
+    .cases .case-content,
+    .cases .testimonial-card {
+        padding: 25px;
+    }
+
+    .cases .case-images {
+        min-height: 300px; /* 调整图片容器高度 */
+    }
+
+    .cases .tab-btn {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    .cases .testimonial-card {
+        padding: 30px;
+    }
+
+    .footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-logo {
+        margin-bottom: 30px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-col h3 {
+        margin-bottom: 15px;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-title {
+        font-size: 2.2em;
+    }
+
+    .sub-title {
+        font-size: 1.3em;
+    }
+
+    .hero-text {
+        font-size: 0.9em;
+        margin-bottom: 40px; /* 调整底部间距 */
+    }
+
+    .section-header h2 {
+        font-size: 1.8em;
+    }
+
+    .section-desc {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 1em;
+    }
+
+    .new-policy .policy-feature-card h4,
+    .new-policy .impact-card h5,
+    .new-policy .price-impact-title,
+    .new-policy .our-value-section h3,
+    .services .card-content h3,
+    .services .process-title,
+    .services .info-item h4,
+    .cases .tab-pane h3,
+    .contact .form-title,
+    .footer-col h3 {
+        font-size: 1.5em;
+    }
+
+    .cases .testimonial-quote {
+        font-size: 1.2em;
+    }
+} 
