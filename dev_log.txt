@@ -12,4 +12,8 @@
 
 2024-07-30T08:30:00Z
 - Addressed logo text wrapping issue.
-- Applied `flex-shrink: 0;` to `.logo` class in `css/styles.css` to prevent it from shrinking in the navbar's flex container, ensuring sufficient width for the logo text. 
+- Applied `flex-shrink: 0;` to `.logo` class in `css/styles.css` to prevent it from shrinking in the navbar's flex container, ensuring sufficient width for the logo text.
+
+2024-07-30T08:45:00Z
+- Logo text wrapping issue persisted after `flex-shrink: 0`.
+- Applied `min-width: 180px;` to `.logo` class in `css/styles.css` as an alternative fix to ensure sufficient space. 
