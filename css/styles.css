@@ -1177,3 +1177,53 @@ textarea.form-control {
     margin-top: 1.5rem;
     font-style: italic;
 }
+
+.why-choose-us-main {
+    background-color: var(--primary-light);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    margin: 3rem 0;
+    padding: 3rem 0;
+}
+
+.why-choose-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 3rem;
+    margin-top: 2rem;
+}
+
+.why-choose-item {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    padding: 1.2rem 2.2rem;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    min-width: 260px;
+    max-width: 350px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.why-choose-item i {
+    color: var(--success-color);
+    font-size: 1.3rem;
+    margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+    .why-choose-list {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    .why-choose-item {
+        min-width: 0;
+        max-width: 100%;
+        padding: 1rem 1.2rem;
+    }
+}
