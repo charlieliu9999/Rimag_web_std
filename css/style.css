@@ -21,4 +21,232 @@
 }
 .price-impact-list li {
   margin-bottom: 10px;
+}
+
+.new-policy .policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.policy-feature-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+}
+
+.policy-feature-card .feature-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    width: 50px;
+    height: 50px;
+    background-color: #eef2ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.policy-feature-card h4 {
+    font-size: 1.25rem;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.policy-feature-card p,
+.policy-feature-card ul {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.policy-feature-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.policy-feature-card ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.policy-feature-card ul li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.policy-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.policy-comparison-table th,
+.policy-comparison-table td {
+    border: 1px solid #e0e0e0;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.policy-comparison-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.policy-comparison-table tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+.policy-impact-section h3,
+.our-value-section h3 {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--dark-blue);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.policy-impact-section h3::after,
+.our-value-section h3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 8px auto 0;
+}
+
+.impact-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.impact-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.impact-card .impact-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+.impact-icon.hospital-impact { color: #28a745; }
+.impact-icon.patient-impact { color: #17a2b8; }
+.impact-icon.industry-impact { color: #fd7e14; }
+
+.impact-card h5 {
+    font-size: 1.15rem;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.impact-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.challenge-solution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.challenge-card, .solution-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    border-left: 5px solid;
+}
+
+.challenge-card {
+    border-left-color: #dc3545; /* Red for challenge */
+}
+
+.solution-card {
+    border-left-color: #28a745; /* Green for solution */
+}
+
+.challenge-card h4, .solution-card h4 {
+    font-size: 1.3rem;
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.challenge-icon, .solution-icon {
+    font-size: 1.5em;
+    margin-right: 12px;
+}
+.challenge-icon { color: #dc3545; }
+.solution-icon { color: #28a745; }
+
+.challenge-card ul, .solution-card ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.challenge-card ul li, .solution-card ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.challenge-card ul li i, .solution-card ul li i {
+    margin-right: 10px;
+    margin-top: 4px;
+    font-size: 1em;
+}
+
+.challenge-card ul li i { color: #dc3545; }
+.solution-card ul li i { color: #28a745; }
+
+.solution-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .challenge-solution-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .policy-grid {
+        grid-template-columns: 1fr;
+    }
+    .impact-cards-container {
+        grid-template-columns: 1fr;
+    }
 } 
